@@ -1,0 +1,14 @@
+Verbatim selected failure messages; Android/Wine process identifiers removed.
+Date/time: 2026-10-26, phone local time (Asia/Kuwait).
+Driver before correction: Turnip v26.2.0 R4.
+
+23:26:29.677  MESA: compile failed! ((null):(null))
+23:26:29.686  MESA: compile failed! ((null):(null))
+13763.278: err:msvcrt:_wassert (L"!status && \"vkCreateGraphicsPipelines\"",L"../proton-wine/dlls/winevulkan/loader_thunks.c",3350)
+13763.288: err:msvcrt:_wassert (L"!status && \"vkCreateGraphicsPipelines\"",L"../proton-wine/dlls/winevulkan/loader_thunks.c",3350)
+
+Diagnostic summary (not a verbatim log quotation):
+  Keyboard W movement while Kishi was attached reproduced the exit.
+  WoW exited with code 3 after the Mesa/pipeline failure.
+  Later GameNative cleanup status 137 does not establish an Android OOM kill.
+  The concrete captured path was graphics shader/pipeline compilation.

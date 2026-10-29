@@ -1,0 +1,5 @@
+SET gxApi "D3D11"
+SET gxWindow "1"
+SET gxMaximize "1"
+SET gxWindowedResolution "1560x720"
+SET GamePadEnable "1"

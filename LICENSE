@@ -1,0 +1,22 @@
+License scope
+
+Copyright (c) 2026 nalhilal
+
+Original documentation, attribution text, and evidence summaries are licensed
+under Creative Commons Attribution 4.0 International (CC BY 4.0).
+Full terms: LICENSES/CC-BY-4.0.txt
+https://creativecommons.org/licenses/by/4.0/
+
+Original helper scripts, tests, configuration recipes/templates, manifest data,
+and workflow configuration are licensed under the MIT License.
+Full terms: LICENSES/MIT.txt
+
+tools/prepare_client.py is adapted from jaredgei/wow-forever-android and is
+licensed under GNU GPL version 3 (GPL-3.0-only), including this repository's
+modifications. Its source header identifies the source revision and changes.
+Full terms: LICENSES/GPL-3.0.txt
+
+Third-party software, patches, trademarks and assets retain their own licenses
+and ownership. Download links and hashes do not relicense their targets.
+No Blizzard game files, runtime binaries or personal account files are included.
+See ATTRIBUTION.md and THIRD_PARTY_NOTICES.md.

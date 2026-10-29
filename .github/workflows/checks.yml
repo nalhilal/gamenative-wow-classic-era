@@ -1,0 +1,23 @@
+name: Repository checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.9', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install Lua for controller command simulation
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y lua5.4
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/check_repository.py

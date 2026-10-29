@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "id": "gamenative", "version": "1.3.0", "filename": "gamenative-v1.3.0.apk",
+      "url": "https://github.com/utkarshdalal/GameNative/releases/download/v1.3.0/gamenative-v1.3.0.apk",
+      "sha256": "f8ce62471142dd152f322436ceecc791604ec114106c7706f5d1e7e07420d602",
+      "upstream": "https://github.com/utkarshdalal/GameNative/releases/tag/v1.3.0",
+      "display_name": "GameNative 1.3.0", "installation": "Install stock Android APK"
+    },
+    {
+      "id": "proton", "version": "11.0-90624-arm64ec-1", "filename": "proton-11.0-90624-arm64ec.wcp",
+      "url": "https://github.com/jaredgei/wow-forever-android/releases/download/components-v1/proton-11.0-90624-arm64ec.wcp",
+      "sha256": "137807f4145b1b440075f83b2b1b3501d19c4eb618784b1a28418652cae3db03",
+      "upstream": "https://github.com/jaredgei/wow-forever-android/releases/tag/components-v1",
+      "display_name": "proton-11.0-90624-arm64ec-1", "installation": "Settings > Contents Manager > Import .wcp from device"
+    },
+    {
+      "id": "dxvk", "version": "2.4.1-wowfix-1", "filename": "dxvk-2.4.1-wowfix.wcp",
+      "url": "https://downloads.gamenative.app/dxwrapper/dxvk-2.4.1-wowfix.wcp",
+      "sha256": "e9e2f5b9f7cfe0460a98a0fb141d381b2aaa02b80eafe01a09c3b8c776402143",
+      "upstream": "https://github.com/utkarshdalal/GameNative/pull/2132",
+      "display_name": "2.4.1-wowfix-1 (ARM64 only)", "installation": "Contents Manager import; select under container DXVK version"
+    },
+    {
+      "id": "turnip", "version": "26.1.99-fe067b17d9-wow-test", "filename": "turnip-wow-scheduler-test.zip",
+      "url": "https://github.com/jaredgei/wow-forever-android/releases/download/components-v1/turnip-wow-scheduler-test.zip",
+      "sha256": "02384f692735515f73aad8a544bc640abe3f35fe18e8df2e667be712c442e54c",
+      "upstream": "https://github.com/jaredgei/wow-forever-android/releases/tag/components-v1",
+      "display_name": "Turnip-WoW-scheduler-test", "installation": "Settings > Driver Manager > Import ZIP from device"
+    },
+    {
+      "id": "consoleport", "version": "3.3.12", "filename": "ConsolePort-3.3.12.zip",
+      "url": "https://github.com/seblindfors/ConsolePort/releases/download/3.3.12/ConsolePort-3.3.12.zip",
+      "sha256": "1395e50ff0bbe5a0d9ddfeac1dd88d7c513da2ee519e78b7bb1d271cfc42c685",
+      "upstream": "https://github.com/seblindfors/ConsolePort/releases/tag/3.3.12",
+      "display_name": "ConsolePort 3.3.12", "installation": "Nine module folders into _classic_era_/Interface/AddOns"
+    }
+  ]
+}

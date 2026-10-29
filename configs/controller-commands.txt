@@ -1,0 +1,24 @@
+# ConsolePort 3.3.12. Run one slash command at a time, IN ORDER, out of combat.
+# Finish Xbox setup first. See docs/controls.md for backup and rollback.
+# 1: Capture controller-only bindings in memory for this session.
+/run GNControllerBackup=GNControllerBackup or ConsolePort:GetData().Gamepad:FlattenBindings(ConsolePort:GetData().Gamepad:GetBindings(true))
+# 2-5: Select trigger modifiers and stick-click mouse emulation. Pause two seconds after 5.
+/run local d=ConsolePort:GetData(); d:SetCVar("GamePadEnable",1); d:SetCVar("GamePadEmulateShift","PADLTRIGGER"); d:SetCVar("GamePadEmulateCtrl","PADRTRIGGER")
+/run local d=ConsolePort:GetData(); d:SetCVar("GamePadEmulateAlt","none"); d:SetCVar("GamePadEmulateTapWindowMs",350)
+/run local d=ConsolePort:GetData(); d:SetCVar("GamePadCursorLeftClick","PADLSTICK"); d:SetCVar("GamePadCursorRightClick","PADRSTICK")
+/run print("Shift:",GetCVar("GamePadEmulateShift"),"Ctrl:",GetCVar("GamePadEmulateCtrl"))
+# 6: Apply only controller combinations from the active Xbox preset, retaining keyboard bindings.
+/run for k,v in pairs(ConsolePort:GetData().Gamepad.Active:GetPresetBindings()) do SetBinding(k,v) end
+# 7: Reapply the trigger generator shoulders explicitly, matching our final repair.
+/run for b,m in pairs(ConsolePort:GetData().Gamepad.Active.Generator.Triggers) do for k,v in pairs(m) do SetBinding(k..b,v) end end
+# 8-9: World bindings. X interacts; it is not a verified universal attack button.
+/run SetBinding("PAD1","JUMP"); SetBinding("PAD2","ACTIONBUTTON5"); SetBinding("PAD3","INTERACTTARGET"); SetBinding("PAD4","ACTIONBUTTON4")
+/run SetBinding("PADFORWARD","TOGGLEGAMEMENU"); SetBinding("PADBACK","OPENALLBAGS")
+# 10-13: ConsolePort contextual cursor and game menu settings.
+/run local d=ConsolePort:GetData(); d("Settings/UICursorLeftClick","PAD1"); d("Settings/UICursorCancel","PAD2"); d("Settings/UICursorRightClick","PAD3"); d:SetCVar("SoftTargetInteract",3)
+/run local d=ConsolePort:GetData(); d("Settings/gameMenuEnable",true); d("Settings/gameMenuCustomSet",true)
+/run local d=ConsolePort:GetData(); d("Settings/gameMenuAccept","PAD1"); d("Settings/gameMenuReturn","PAD2"); d("Settings/gameMenuSwitch","PADRSHOULDER")
+/run print("A:",GetBindingAction("PAD1"),"B:",GetBindingAction("PAD2"),"X:",GetBindingAction("PAD3"),"LB:",GetBindingAction("PADLSHOULDER"),"RB:",GetBindingAction("PADRSHOULDER"))
+# 14-15: Save bindings, then persist addon settings via an ordinary UI reload.
+/run print("Bindings saved:",CPAPI.SaveBindings())
+/reload

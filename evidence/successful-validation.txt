@@ -1,0 +1,29 @@
+Sanitized validation summary; not a verbatim complete trace.
+Date: 2026-10-26, phone local time (Asia/Kuwait).
+
+Container/report and launch checks:
+  GameNative 1.3.0; SM-S928B / Adreno 750 / Android 17.
+  Proton selection: proton-11.0-90624-arm64ec-1.
+  DXVK selection: 2.4.1-wowfix-1.
+  Graphics Driver: Wrapper, Turnip-WoW-scheduler-test.
+  Live ADRENOTOOLS_DRIVER_PATH selected the patched driver's installation.
+  WINEESYNC=0; desktop 1560x720.
+
+23:42:04: repeated the keyboard W movement that preceded the old failure.
+  Character moved and game continued rendering.
+  No repetition of the fatal pipeline signature in the bounded live tail.
+
+Subsequently the user confirmed moving/turning with Kishi without a crash.
+  User identity, realm and character information omitted.
+
+23:46:32.307: WoW exited with code 0 after an intentional /quit.
+  The complete validation log had no old Mesa compile/pipeline fatal signatures.
+  This closure was a clean exit, distinct from the previous code-3 failure.
+
+Then ordinary Play was started:
+  WINEDEBUG=-all, WINEESYNC=0, patched driver selected.
+  No active diagnostic capture/watchdog remained.
+
+Limits:
+  Limited in-world movement test; not a long-session or broad-scene benchmark.
+  Full manual UI/ability combinations and rear-paddle zoom were not completed.

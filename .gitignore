@@ -1,0 +1,16 @@
+downloads/
+private/
+staging/
+__pycache__/
+*.pyc
+.DS_Store
+*.part
+*.apk
+*.wcp
+*.zip
+*.gz
+*.exe
+*.dll
+*.so
+.env
+login.txt

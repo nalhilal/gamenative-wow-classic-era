@@ -1,0 +1,25 @@
+Sanitized diagnostic summary; not a verbatim complete trace.
+Platform: initial DroidDeck Linux/glibc Proton Experimental ARM64 test.
+
+WoW main-thread fault sequence:
+  EXCEPTION_ILLEGAL_INSTRUCTION 0xc000001d
+  WowClassic-arm64.exe + 0x330a78
+  Handler then encountered EXCEPTION_ACCESS_VIOLATION 0xc0000005 executing zero.
+  Syscall register x8 = 0x50, dispatcher register x16 = 0.
+  Return address was +0x14 in the copied literal-dependent syscall stub.
+  Wine repeatedly failed to unwind through the copied code location.
+
+Binary comparison:
+  Original NtProtectVirtualMemory loaded a dispatcher pointer through data
+  adjacent to its stub. The reference runtime loaded it through x18/TEB+0x2f8.
+  The reference Unix-side thread initialization set that TEB pointer to
+  __wine_syscall_dispatcher.
+
+Interpretation:
+  The captured null call matches the unpatched copy-dependent stub.
+  An illegal instruction alone is not proof of an unsupported phone instruction.
+  This coordinated runtime fix is not a single-DLL substitution.
+
+Subsequent separate GameNative validation:
+  Imported the complete pinned bionic runtime and selected ARM64 DXVK.
+  Stock GameNative reached the region dialog, cinematic, login and world.
